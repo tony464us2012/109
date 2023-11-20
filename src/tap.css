@@ -1,0 +1,560 @@
+/* Main Display */
+
+.App {
+    text-align: center;
+  }
+  
+  .displayDash {
+     position: relative; 
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(200px, 350px));
+     grid-gap: 10px;
+     margin-top: 2.5rem
+  }
+  .main-cont {
+      position: relative; 
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+      grid-gap: 25px;
+      margin-top: 2.5rem
+  }
+  .main-section{
+      position: relative;
+      padding: 1rem .6rem;
+      background:  linear-gradient(90deg, rgba(229,235,242,1) 0%, rgba(255,255,255,1) 24%, rgba(250,250,250,1) 74%, rgba(229,235,242,1) 100%);
+      box-shadow: 3px 3px 10px black ;
+      border-radius: 2px;
+      opacity: .93;
+      perspective: 800px;
+      text-align: center;
+  }
+  .logo-container {
+        width: 40%;
+        max-height: 50%;
+        margin: 0 auto
+  }
+  
+  .logo-container > img {
+      height: 100%;
+      width: 100%;
+  }
+  .details {
+    text-align: left;
+  }
+  .main-details,
+  .main-bottom,
+  .main-description {
+    color: black
+  }
+  .main-details h1 {
+        color: black;
+        font-size: 2em;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        line-height: 85%;
+        margin-left: auto
+    }
+  .main-details h3 {
+        margin-bottom: 6%;
+        font-size: 1.3em;
+  }
+  .main-details p {
+        line-height: 85%;
+        font-size: 1.1em;
+        margin-top: -15px;
+  }
+  .main-bottom {
+        display: flex;
+        justify-content: center;
+  }
+  .main-bottom p {
+        margin: 8px 0 0 0;
+        border: 1px solid black;
+        padding: 2px 6px;
+  
+  }
+  .card-back {
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+  }
+  .main-description {
+    place-items: center;
+    font-size: 1rem;
+  }
+  .dashboard {
+      margin-left: 70%
+  }
+
+  
+  .card-container {
+    perspective: 1000px;
+  }
+  
+  .card {
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -moz-transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -ms-transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -o-transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .face {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      padding: 1rem .6rem;
+      background:  linear-gradient(90deg, rgba(229,235,242,1) 0%, rgba(255,255,255,1) 24%, rgba(250,250,250,1) 74%, rgba(229,235,242,1) 100%);
+      box-shadow: 3px 3px 10px black ;
+      color: #000;
+      -webkit-backface-visibility: hidden ;
+      -moz-backface-visibility: hidden;
+      backface-visibility: hidden ;
+    }
+    
+    .card-front {
+      background-color: lightblue;
+    }
+    
+    .card-back {
+      position: absolute;
+      display: grid;
+      place-items: center;
+      visibility: visible;
+      padding: 1rem; 
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+  
+  .flipped .card {
+    transform: rotateY(180deg);
+  }
+    @media (min-width: 1800px) {
+      .main-cont {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      }
+    }
+    
+    @media screen and (max-width: 820px){
+      .dashboard {
+        display: block;
+        margin-left: auto;
+        font-size: .9em;
+      }
+    }
+   
+  @media (max-width: 425px) {
+  .main-cont {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 35px;
+    padding: 0 1rem
+    }
+  }
+
+  /* Display Auth */
+
+  
+.dashboard-title {
+    font-size: 2.5rem;
+    border: 4px solid black;
+    margin-top: 1rem;
+    text-align: center
+  }
+  
+  .flex { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .logout {
+    display:block;
+    margin-right: auto;
+    margin-bottom: 2.5rem;
+  }
+  
+  .content {
+    position:relative;
+    height:20vh;
+    text-align:center;
+    background-color: white;
+  }
+  
+  .searchedBeerItems {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  
+  @media (max-width: 768px) {
+   
+    .content {
+      height:30vh;
+    }
+    
+  }
+  
+  @media (max-width: 600px) {
+    .displayDash:last-child {
+      margin-bottom: 3%;
+    }
+  }
+  
+  @media (max-width: 425px) {
+    .dashboard-title {
+      font-size: 2.2rem;
+      border: 3px solid black;
+    }
+  }
+
+  .beer-section {
+    margin: 2%;
+    border-radius: 12px;
+
+  }
+  
+  .beer-section1{
+    border: 0px solid rgba(100, 100, 100, 1);
+  border-radius: 24px;
+ 
+    padding: 5%;
+    position: relative
+  }
+    
+    .beer-section h1, .display-section h1 {
+      font-family: Consolas;
+      margin-top: 0%;
+      margin-bottom: 1%;
+      line-height: 90%;
+      font-size: 1.6em;
+    }
+    
+  p {
+      margin-bottom: 0;
+      font-size: 100%;
+    }
+  
+    .details  {
+      margin-top: 4%;
+    }
+  
+    .details1 h1 {
+      font-size: 140%;
+    }
+  
+    .details1 h3 {
+      font-size: 100%;
+    }
+  
+    .details1 p {
+      font-size: 90%
+    }
+  
+    .bottom1 p {
+      font-size: 90%;
+  
+    }
+    
+    h3 {
+      color: rgb(214, 167, 78);
+      margin-top: 2%;
+      line-height: 90%;
+      font-size: 2rem;
+      margin-bottom: 4%;
+    }
+    
+    .bottom {
+      display: flex;
+      margin-right: 2%;
+      margin-bottom: 2%;
+    }
+    
+    .bottom > p {
+    text-align: center;
+    margin-right: 2%;
+    }
+  
+    .bottom1 p {
+      color: white
+    }
+    
+    .logo-cont {
+      width: 100px;
+      margin: 1% 1% 0 1%;
+    }
+    
+    .logo-cont1 {
+      width: 100px;
+      margin-bottom: 4%;
+      margin-left: 24%;
+    }
+    
+    .logo-cont > img {
+      width: 100%;
+    }
+    
+    .logo-cont1 > img {
+      width: 100%;
+    }
+  
+    .beerInput {
+      display: flex;
+      margin-top: 2%
+    }
+  
+    .beerInput button {
+      width: 40%;
+      font-size: 80%;
+      padding: 2%;
+      margin-left: 2%;
+    }
+  
+    input[type="number"] {
+      width: 100%;
+      font-size: 80%;
+      border: 1px solid black;
+      border-radius: 5px;
+    }
+   
+    .dashtap {
+     position: absolute;
+     display: block;
+     width: 35px;
+     height: 35px;
+     background-color: rgb(233, 236, 234);
+     border-radius: 50%;
+     text-align: center;
+     color: black;
+     padding: .5em .3em;
+     margin-left: 75%;
+     margin-top: 2%;
+   }
+  
+   .dashtap p {
+    margin-top: -.3em;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-align: center
+   }
+  
+   .searchTitle {
+     font-weight: 400;
+     color: brown;
+     text-align: center;
+     font-size: 2.5rem
+    }
+  
+    .remove-btn {
+      display: flex;
+      margin: 0 auto;
+    }
+    
+    .about-description {
+      font-size: 1.25rem;
+      margin-top: 2rem;
+      color: black;
+      font-family: 'IM Fell DW Pica', serif;
+      text-indent: 1rem;
+    }
+
+    .press-container {
+      border-top: 2px solid rgb(184, 184, 184);
+      margin-top: 2rem;
+      padding-top: 2rem
+    }
+    .press-container h1 {
+      text-transform: uppercase;
+    }
+    .press-item {
+      margin: 1rem 0;
+    }
+    .press-item a {
+      color: black;
+      text-decoration: underline;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    .press-item h5 {
+      margin: .3rem 0 -.1rem
+    }
+    .star {
+      color: yellow;
+    }
+  
+   @media (max-width:600px) {
+      .beer-section1 {
+        padding: 7%;
+      }
+      .details1 {
+        font-size: 120%;
+      }
+      .details1 p {
+        font-size: 75%;
+      }
+      .bottom1 p {
+        font-size: 90%;
+      }
+      .beer-section1:last-child {
+        margin-bottom : 10%;
+      }
+  
+   }
+  
+   @media (max-width:500px) {
+    .beer-section1 {
+      padding: 2%;
+      border: 3px solid white;
+    }
+  
+    .details1 {
+      font-size: 120%;
+    }
+    .details1 p {
+      font-size: 85%;
+    }
+    
+    .bottom1 p {
+      font-size: 100%;
+    }
+   }
+  
+   @media (max-width: 350px) {
+    
+    .details1 {
+      font-size: 110%;
+    }
+    .bottom1 p {
+      font-size: 90%;
+    }
+   }
+  
+   .bottle-title {
+    font-size: 2rem;
+    font-family: cursive;
+    align-items: center;
+}
+.bottle-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-gap: 5px;
+    padding: 1rem .5rem;
+    background-color: rgba(211, 211, 211, 0.26);
+}
+.wine-container {
+    background-color: rgba(211, 211, 211, 0.26);
+    padding: 1rem 3rem;
+}
+.bottle-item {
+    text-align: center;
+}
+.bottle-item h1 {
+  text-decoration: underline;
+}
+.bottle-item div,
+.wine-container div {
+  color: black;
+    margin-bottom: .5rem;
+}
+.wine-container h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+.wine-container {
+  border-top: 1px solid grey;
+}
+.wine-item-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+.wine-item {
+  margin: 0 auto;
+}
+.add-bottle-title {
+    margin-bottom: -1px
+}
+
+#bottle-btn {
+    height: 21px;
+    width: 20px;
+    padding: 0
+}
+
+.form-control {
+  line-height: 1 !important;
+}
+
+@media (max-width: 768px) {
+    .bottle-container {
+        grid-template-columns: 1fr;
+    }
+    .bottle-item {
+        display: block;
+        margin: 0 auto;
+    }
+    .wine-container h3 {
+        margin-bottom: 1rem
+    }
+    .wine-item-container {
+    grid-template-columns: 1fr 1fr;
+    padding-left: 1.5rem
+    }
+    .wine-item {
+        display: block;
+        margin: 0 auto;
+    }
+    .wine-item div {
+        width: 100%;
+    }
+}
+
+@media (max-width: 425px) {
+    .bottle-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 5px;
+            padding: .8rem 1rem
+    }
+    .bottle-item {
+        width: 90%;
+    }
+    .dashboard-btn {
+        width: 120px;
+        height: 40px;
+        margin-top: 1rem;
+        margin-bottom: 1rem
+    }
+    .wine-item-container {
+        grid-template-columns: 1fr;
+        padding-left: .8rem
+        }
+    .wine-item-container .wine-item:nth-child(2) {
+        margin-top: -.5rem
+    }
+    .wine-item {
+        width: 95%
+    }
+    .wine-item div {
+        text-align: center;
+    }
+}
+    @media (max-width: 320px) {
+        .wine-item-container {
+            padding-left: .4rem;
+            width: 100%
+            }
+        .wine-item {
+            width: 100%
+        }
+    }
+
+
+
+    
