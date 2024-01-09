@@ -34,7 +34,7 @@ export const createOrder = (order) => async (dispatch) => {
                 'Content-Type': 'application/json'
             }
         }
-        const { data } = await axios.post(`/api/orders`, order, config)
+        const { data } = await axios.post(`https://one09-api.onrender.com/api/orders`, order, config)
 
         dispatch({
             type: ORDER_CREATE_SUCCESS,
@@ -60,7 +60,7 @@ export const guestOrder = (order) => async (dispatch) => {
                 'Content-Type': 'application/json'
             }
         }
-        const { data } = await axios.post(`/api/orders/guest`, order, config)
+        const { data } = await axios.post(`https://one09-api.onrender.com/api/orders/guest`, order, config)
 
         dispatch({
             type: ORDER_CREATE_SUCCESS,
@@ -89,7 +89,7 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
                 Authorization: `Bearer ${user.token}`
             }
         }
-        const { data } = await axios.get(`/api/orders/${id}`, config)
+        const { data } = await axios.get(`https://one09-api.onrender.com/api/orders/${id}`, config)
 
         dispatch({
             type: ORDER_DETAILS_SUCCESS,
@@ -122,7 +122,7 @@ export const myOrders = (id) => async (dispatch, getState) => {
                 Authorization: `Bearer ${user.token}`
             }
         }
-        const { data } = await axios.get(`/api/orders/myorders/${id}`, config)
+        const { data } = await axios.get(`https://one09-api.onrender.com/api/orders/myorders/${id}`, config)
 
         dispatch({
             type: MY_ORDERS_SUCCESS,
@@ -148,7 +148,7 @@ export const getOrders = () => async (dispatch, getState) => {
                 Authorization: `Bearer ${user.token}`
             }
         }
-        const { data } = await axios.get(`/api/orders`, config)
+        const { data } = await axios.get(`https://one09-api.onrender.com/api/orders`, config)
 
         dispatch({
             type: GET_ORDERS_SUCCESS,
@@ -165,7 +165,8 @@ export const getSetup = () => async (dispatch) => {
     try {
         dispatch({ type: GET_SETUP_REQUEST })
 
-        const { data } = await axios.get(`/api/setup`)
+        const { data } = await axios.get(`https://one09-api.onrender.com`)
+        console.log(data)
 
         dispatch({
             type: GET_SETUP_SUCCESS, 
@@ -193,7 +194,7 @@ export const updateSetup = (setup) => async (dispatch, getState) => {
                 Authorization: `Bearer ${user.token}`
             }
         }
-        const { data } = await axios.put(`/api/setup`, setup, config)
+        const { data } = await axios.put(`https://one09-api.onrender.com`, setup, config)
 
 
         dispatch({
@@ -221,7 +222,7 @@ export const refundOrder = (refund) => async (dispatch, getState) => {
                 Authorization: `Bearer ${user.token}`
             }
         }
-        const { data } = await axios.put(`/api/orders/refund`, refund, config)
+        const { data } = await axios.put(`https://one09-api.onrender.com/api/orders/refund`, refund, config)
 
 
         dispatch({

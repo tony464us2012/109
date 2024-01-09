@@ -13,7 +13,7 @@ export const login = ({email, password}) => async (dispatch) => {
                 'Content-Type': 'application/json'
             }
         }
-        const { data } = await axios.post('/api/users/login', { email, password }, config)
+        const { data } = await axios.post('https://one09-api.onrender.com/api/users/login', { email, password }, config)
 
         dispatch({
             type: USER_LOGIN_SUCCESS,
@@ -52,7 +52,7 @@ export const register = ({firstName, lastName, phone, email, password}) => async
                 'Content-Type': 'application/json'
             }
         }
-        const { data } = await axios.post('/api/users', { firstName, lastName, phone, email, password }, config)
+        const { data } = await axios.post('https://one09-api.onrender.com/api/users', { firstName, lastName, phone, email, password }, config)
 
         dispatch({
             type: USER_LOGIN_SUCCESS,
@@ -80,7 +80,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
                 Authorization: `Bearer ${user.token}`
             }
         }
-        const { data } = await axios.get(`/api/users/${id}`, config)
+        const { data } = await axios.get(`https://one09-api.onrender.com/api/users/${id}`, config)
 
         
         dispatch({
@@ -110,7 +110,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
                 Authorization: `Bearer ${user1.token}`
             }
         }
-        const { data } = await axios.put(`/api/users/profile`, user, config)
+        const { data } = await axios.put(`https://one09-api.onrender.com/api/users/profile`, user, config)
 
         dispatch({
             type: USER_UPDATE_PROFILE_SUCCESS,
@@ -136,7 +136,7 @@ export const listUsers = () => async (dispatch, getState) => {
                 Authorization: `Bearer ${user.token}`
             }
         }
-        const { data } = await axios.get(`/api/users`, config)
+        const { data } = await axios.get(`https://one09-api.onrender.com/api/users`, config)
 
         dispatch({
             type: USER_LIST_SUCCESS,
@@ -178,7 +178,7 @@ export const deleteUser2 = (id) => async (dispatch) => {
             type: USER_DELETE_REQUEST
         })
         
-        await axios.delete(`/api/users/${id}`)
+        await axios.delete(`https://one09-api.onrender.com/api/users/${id}`)
 
         dispatch(logout())
 
@@ -205,7 +205,7 @@ export const updateUser = (user) => async (dispatch, getState) => {
                 Authorization: `Bearer ${user1.token}`
             }
         }
-        const { data } = await axios.put(`/api/users/${user1._id}`, user, config)
+        const { data } = await axios.put(`https://one09-api.onrender.com/api/users/${user1._id}`, user, config)
 
         dispatch({ type: USER_UPDATE_SUCCESS })
         dispatch({ type: USER_DETAILS_SUCCESS, payload: data })

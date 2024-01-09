@@ -14,10 +14,10 @@ export const getMainBeers = () => async (dispatch) => {
     try {
         dispatch({ type: BEER_REQUEST})
         
-        const res = await axios.get('/api/dashboard')
+        const res = await axios.get('https://one09-api.onrender.com/api/dashboard')
         dispatch({ type: SET_MAIN_BEERS, payload: res.data})
 
-        const res2 = await axios.get('/api/bottle');
+        const res2 = await axios.get('https://one09-api.onrender.com/api/bottle');
         dispatch({ type: SET_MAIN_BOTTLES, payload: res2.data});
 
     } catch(err) {
@@ -49,7 +49,7 @@ export const searchBeer = (text) => async (dispatch) => {
         const response = await fetch(`https://api.untappd.com/v4/beer/info/${bid}?client_id=41EF786235D5A6E859C26C7DABA2048BB19344D0&client_secret=2C5E752380284C4A141AD1066C8E688BF0A299F9`);
         const data = await response.json()
         const beerObject = data.response.beer
-        const res = await axios.post('/api/dashboard', beerObject, config)
+        const res = await axios.post('https://one09-api.onrender.com/api/dashboard', beerObject, config)
         dispatch({ type: SET_MAIN_BEERS, payload: res.data})
         dispatch({ type: CLEAR_SEARCHED_BEERS })
     } catch(err) {
@@ -68,7 +68,7 @@ export const removeBeer = (id) => async (dispatch, getState) => {
             }
         }
         dispatch({ type: REMOVE_BEER, payload: id})
-        await axios.delete('/api/dashboard', {data: {userid: id}}, config)
+        await axios.delete('https://one09-api.onrender.com/api/dashboard', {data: {userid: id}}, config)
     } catch(err) {
         console.log(err)
     }
@@ -84,7 +84,7 @@ export const addBottle = (bottle) => async (dispatch, getState) => {
                 Authorization: `Bearer ${user.token}`
             }
         }
-        const res = await axios.post('/api/bottle', bottle, config);
+        const res = await axios.post('https://one09-api.onrender.com/api/bottle', bottle, config);
         dispatch({ type: ADD_BOTTLE, payload: res.data});
     } catch(err) {
         console.log(err)
@@ -102,7 +102,7 @@ export const removeBottle = (id) => async (dispatch, getState) => {
             }
         }
         dispatch({ type: REMOVE_BOTTLE, payload: id});
-        await axios.delete('/api/bottle', {data: {userid: id}}, config);
+        await axios.delete('https://one09-api.onrender.com/api/bottle', {data: {userid: id}}, config);
     } catch(err) {
         console.log(err)
     }

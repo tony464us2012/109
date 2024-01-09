@@ -5,7 +5,7 @@ export const listProducts = () => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_LIST_REQUEST })
 
-        const { data } = await axios.get(`/api/products`)
+        const { data } = await axios.get(`https://one09-api.onrender.com/api/products`)
 
         dispatch({
             type: PRODUCT_LIST_SUCCESS, 
@@ -22,7 +22,7 @@ export const listProductDetails = (id) => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_DETAILS_REQUEST })
 
-        const { data } = await axios.get(`/api/products/${id}`)
+        const { data } = await axios.get(`https://one09-api.onrender.com/api/products/${id}`)
 
         dispatch({
             type: PRODUCT_DETAILS_SUCCESS, 
@@ -48,7 +48,7 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
                 Authorization: `Bearer ${user.token}`
             }
         }
-       const { data } = await axios.delete(`/api/products/${id}`, config)
+       const { data } = await axios.delete(`https://one09-api.onrender.com/api/products/${id}`, config)
 
         dispatch({
             type: PRODUCT_DELETE_SUCCESS
@@ -78,7 +78,7 @@ export const createProduct = () => async (dispatch, getState) => {
                 Authorization: `Bearer ${user.token}`
             }
         }
-        const { data } = await axios.post(`/api/products`, {id: user._id}, config)
+        const { data } = await axios.post(`https://one09-api.onrender.com/api/products`, {id: user._id}, config)
 
         dispatch({
             type: PRODUCT_CREATE_SUCCESS,
@@ -105,7 +105,7 @@ export const updateProduct = (product) => async (dispatch, getState) => {
                 Authorization: `Bearer ${user.token}`
             }
         }
-        const { data } = await axios.put(`/api/products/${product._id}`, product, config)
+        const { data } = await axios.put(`https://one09-api.onrender.com/api/products/${product._id}`, product, config)
 
         dispatch({
             type: PRODUCT_UPDATE_SUCCESS
